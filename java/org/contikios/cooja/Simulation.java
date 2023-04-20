@@ -107,6 +107,9 @@ public class Simulation extends Observable implements Runnable {
 
   /* Event queue */
   private final EventQueue eventQueue = new EventQueue();
+  public boolean nextIsAlsoAVeryFunnyCmemuEventWith(long expectedNextWakeupTime) {
+    return this.eventQueue.nextIsAlsoAVeryFunnyCmemuEventWith(expectedNextWakeupTime);
+  }
 
   /* Poll requests */
   private boolean hasPollRequests = false;

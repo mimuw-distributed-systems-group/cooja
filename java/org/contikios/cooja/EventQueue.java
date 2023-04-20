@@ -160,6 +160,16 @@ public final class EventQueue {
     return tmp;
   }
 
+  boolean nextIsAlsoAVeryFunnyCmemuEventWith(long expectedNextWakeupTime) {
+    Pair first = this.queue.peek();
+    if (first == null) return false;
+    if (!(first.event instanceof MoteTimeEvent)) {
+      return false;
+    }
+    MoteTimeEvent ev = (MoteTimeEvent)first.event;
+    return ev.getMote() instanceof ICherryMote && expectedNextWakeupTime == first.time;
+  }
+
   public boolean isEmpty() {
     return queue.isEmpty();
   }
