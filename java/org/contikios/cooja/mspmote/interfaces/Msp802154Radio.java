@@ -424,6 +424,7 @@ public class Msp802154Radio extends Radio implements CustomDataRadio {
   }
   
   public boolean canReceiveFrom(CustomDataRadio radio) {
-    return radio.getClass().equals(this.getClass());
+    return true;
+    // return radio.getClass().equals(this.getClass());
   }
 }
